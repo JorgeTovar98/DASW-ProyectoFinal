@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Hacker Sacker</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="EndGam Gaming Magazine Template">
+	<meta name="keywords" content="endGam,gGaming, magazine, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link href="img/favicon.ico" rel="shortcut icon" />
+
+	<script src="./js/newCampaign.js"></script>
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/slicknav.min.css" />
+	<link rel="stylesheet" href="css/owl.carousel.min.css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link href="../fontawesome-free-5.13.0-web/css/all.css" rel="stylesheet">
+	<!-- Main Stylesheets -->
+	<link rel="stylesheet" href="css/style.css" />
+
+
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<style>
+		#btnNew {
+			float: right;
+			margin-right: 10em;
+			margin-top: -3em;
+		}
+
+		.white-font{
+			color: white;
+		}
+		.blog-page{
+			padding-left: 5em;
+		}
+		label{
+			display: inline-block;
+			width: 90px;
+		}
+		#desc{
+			color: white;
+			font-size: 18px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Page top section -->
+	<section class="page-top-section set-bg" data-setbg="img/page-top-bg/7.jpg">
+		<div class="page-info">
+			<h2>Campañas</h2><br>
+			<p id="desc">En esa sección se darán de alta las campañas a través de los formatos predeterminados de spotify, netflix y paypal. <br>
+			Se deberá seleccionar el formato que se desea utilizar, y se podrá seleccionar el nombre de la víctima, la fecha en la <br> que ocurrió la intrusión a su cuenta, la ciudad, y el correo de la víctima.</p>
+		</div>
+	</section>
+	<!-- Page top end-->
+
+
+	<!-- Blog page -->
+	<section class="site-breadcrumb">
+		<div class="row">
+			
+		</div>
+	</section>
+	<section class="blog-page">
+		<a type="button" class="btn btn-success" id="btnNew" href="./campaign.html">Regresar a campañas activas</a>
+		<form action="" onsubmit="saveValues()">
+			<input type="radio" id="spotifyRadio" name="platform" value="spotify">
+			<label class="white-font " for="vehicle1"> <i class="fab fa-spotify fa-4x"></i></label>
+			<input type="radio" id="netflixRadio" name="platform" value="netflix">
+			<label class="white-font" for="vehicle2"><i class="fab fa-neos fa-4x"></i></label>
+			<input type="radio" id="paypalRadio" name="platform" value="paypal">
+			<label class="white-font" for="vehicle3"> <i class="fab fa-paypal fa-4x"></i></label><br><br>
+
+			<label class="white-font" for="fecha">Fecha</label>
+			<input type="datetime-local" id="dateCamp" name="fecha" required><br>
+			<label class="white-font" for="nombre">Nombre</label>
+			<input type="text" id="nameCamp" name="nombre" required><br>
+			<label class="white-font" for="ciudad">Ciudad</label>
+			<input type="text" id="cityCamp" name="ciudad" required><br>
+			<label class="white-font" for="correo">Correo</label>
+			<input type="text" id="emailCamp" name="correo" required><br><br>
+			
+			<button class="btn-success" type="submit" style="float: right; margin-right: 43.5em; margin-top: -3.6em; width: 85px;">Submit</button>
+			
+		</form>
+		
+		<button onclick="preview()" style="float: right; margin-right: 50em; margin-top: -3.6em;"><i class="fas fa-search"></i> &nbsp Preview</button>
+	</section>
+
+	<div id="previewhtml"></div>
+	<!-- Blog page end-->
+
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.slicknav.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.sticky-sidebar.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>

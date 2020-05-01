@@ -1,0 +1,46 @@
+{
+  "campaign": [
+    {
+      "name": "Jorge",
+      "city": "Guadalajara",
+      "date": "2020-04-29T17:00",
+      "email": "test@iteso.mx",
+      "platform": "netflix",
+      "id": "1588213740146"
+    },
+    {
+      "name": "Jorge",
+      "city": "Guadalajara",
+      "date": "2020-04-25T12:12",
+      "email": "dasw@iteso.mx",
+      "platform": "spotify",
+      "id": "1588217607629"
+    },
+    {
+      "name": "TestUser",
+      "city": "Guadalajara",
+      "date": "2020-04-30T12:00",
+      "email": "User@iteso.mx",
+      "platform": "paypal",
+      "id": "1588268931432"
+    }
+  ],
+  "users": [
+    {
+      "username": "Jorge",
+      "password": "test1",
+      "email": "david@test.com",
+      "phone": "31213121",
+      "name": "David Lopez",
+      "id": "Jorge"
+    },
+    {
+      "username": "jtovar",
+      "password": "test",
+      "email": "test@hotmail.com",
+      "phone": "31222232",
+      "name": "Jorge Tovar",
+      "id": "jtovar"
+    }
+  ]
+}
