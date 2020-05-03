@@ -1,0 +1,3 @@
+{
+    "DB_URL" : "mongodb+srv://jtovar:password09@cluster0-1te1u.mongodb.net/test?retryWrites=true&w=majority"
+}

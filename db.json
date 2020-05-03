@@ -6,7 +6,8 @@
       "date": "2020-04-29T17:00",
       "email": "test@iteso.mx",
       "platform": "netflix",
-      "id": "1588213740146"
+      "id": "1588213740146",
+      "createdBy": "jorge"
     },
     {
       "name": "Jorge",
@@ -14,7 +15,8 @@
       "date": "2020-04-25T12:12",
       "email": "dasw@iteso.mx",
       "platform": "spotify",
-      "id": "1588217607629"
+      "id": "1588217607629",
+      "createdBy": "jorge"
     },
     {
       "name": "TestUser",
@@ -22,7 +24,17 @@
       "date": "2020-04-30T12:00",
       "email": "User@iteso.mx",
       "platform": "paypal",
-      "id": "1588268931432"
+      "id": "1588268931432",
+      "createdBy": "jorge"
+    },
+    {
+      "name": "Juan",
+      "city": "GDL",
+      "date": "12/12/12",
+      "email": "q@q",
+      "platform": "spotify",
+      "id": "1588459493550",
+      "createdBy": "jorge"
     }
   ],
   "users": [

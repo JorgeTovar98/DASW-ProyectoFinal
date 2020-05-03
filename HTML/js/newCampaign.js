@@ -42,7 +42,8 @@ function saveValues(){
         date: fechaVictima,
         email: emailVictima,
         platform: globalplatform,
-        id: timestamp
+        id: timestamp,
+        createdBy: "jorge"
     };
     $.ajax({
         method: 'POST',

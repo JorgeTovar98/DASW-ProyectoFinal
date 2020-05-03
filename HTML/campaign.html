@@ -38,6 +38,12 @@
 			margin-right: 10em;
 			margin-top: -3em;
 		}
+
+		#selectCampaign{
+			position: relative;
+			bottom: 250px;
+			left: 935px;
+		}
 	</style>
 
 </head>
@@ -83,38 +89,50 @@
 	</section>
 	<!-- Page top end-->
 
-
 	<!-- Blog page -->
 	<section class="blog-page">
 		<a type="button" class="btn btn-success" id="btnNew" href="./NewCampaign.html">Nueva campaña</a>
 		<h2 id="miscampañas">Mis campañas</h2><br>
+		<div id="selectCampaign">
+			<label for="campaigns" style="color: white; font-size: 18px;">Filtrar campaña por: &nbsp;&nbsp;</label>
+	
+			<select id="campaigns">
+				<option value="todos" selected>Todos</option>
+				<option value="netflix">Netflix</option>
+				<option value="spotify">Spotify</option>
+				<option value="paypal">Paypal</option>
+			</select>
+	
+			<button class="btn-success" onclick="filterC()">Buscar</button>
+		</div>
 		<div id="campanasActivas">
-			
+
 		</div>
 	</section>
+
 	<!-- Blog page end-->
 
 	<!-- Modal -->
-	<div class="modal fade" id="myModal" role="dialog" >
+	<div class="modal fade" id="myModal" role="dialog">
 		<div class="modal-dialog" style="width: 800px !important; max-width: none !important;">
-		
-		  <!-- Modal content-->
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <button type="button" class="close" data-dismiss="modal"></button>
-			  <h4 class="modal-title">Campaña activa</h4>
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"></button>
+					<h4 class="modal-title">Campaña activa</h4>
+				</div>
+				<div class="modal-body">
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
 			</div>
-			<div class="modal-body">
-			  
-			</div>
-			<div class="modal-footer">
-			  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</div>
-		  </div>
-		  
+
 		</div>
-	  </div>
-	
+	</div>
+
 
 	<!--====== Javascripts & Jquery ======-->
 	<script src="js/jquery-3.2.1.min.js"></script>
@@ -125,6 +143,7 @@
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="./js/map.js"></script>
+	<script src="./js/filter.js"></script>
 </body>
 
 </html>
