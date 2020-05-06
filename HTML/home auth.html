@@ -47,7 +47,7 @@
 				</a>
 				<nav class="top-nav-area w-100">
 					<div class="user-panel">
-						<a href="./home.html">Cerrar Sesión </a>
+						<a href="#" onclick="logout()">Cerrar Sesión </a>
 					</div>
 					<!-- Menu -->
 					<ul class="main-menu primary-menu">
@@ -121,6 +121,12 @@
 	<script src="js/jquery.sticky-sidebar.min.js"></script>
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/main.js"></script>
+	<script>
+		function logout(event) {
+			sessionStorage.removeItem("token");
+			window.location = './login.html';
+		}
+	</script>
 
 	</body>
 </html>

@@ -5,23 +5,20 @@ function register() {
     let phoneR = document.querySelector("#regPhone").value;
     let nameR = document.querySelector("#regName").value;
     let peticion = {
-        username: usuarioR,
+        fullName: nameR,
+        user: usuarioR,
         password: contraseñaR,
         email: emailR,
-        phone: phoneR,
-        name: nameR,
-        id: usuarioR
+        phone: phoneR
     };
     $.ajax({
         method: 'POST',
-        url: "http://127.0.0.1:3000/users",
+        url: "http://127.0.0.1:3003/api/user",
         data: peticion,
         dataType: "json",
-        success: function (token) {
-            // Do something
+        success: function (resolve) {
             alert("Usuario registrado correctamente, favor de iniciar sesión");
             window.open('./login.html');
-            document.cookie = `token=${token};`; 
         },
         error: function (error) {
             console.log("ERROR:" + JSON.stringify(error));

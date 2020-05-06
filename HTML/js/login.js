@@ -1,21 +1,23 @@
 function login() {
     let usuario = document.querySelector("#usrLog").value;
     let contraseña = document.querySelector("#passLog").value;
+    let peticion = {
+        user: usuario,
+        password: contraseña
+    }
     $.ajax({
-        method: 'GET',
-        url: `http://127.0.0.1:3000/users/${usuario}`,
+        method: 'POST',
+        url: `http://127.0.0.1:3003/api/login`,
+        data: peticion,
+        dataType: "json",
         success: function (resolve) {
-            // Do something
-            if (resolve.password == contraseña) {
-                alert("Bienvenido");
-                window.location = './home auth.html';
-            }
-            else{
-                alert("Contraseña incorrecta");
-            }
+            alert("Bienvenido");
+            sessionStorage.setItem("token",resolve.token);
+            sessionStorage.setItem("user",JSON.stringify(resolve.User));
+            window.location = './home auth.html';
         },
-        error: function (error) {
-            alert("Las credenciales no son válidas.");
+        error: function(resolve){
+            alert("Credenciales inválidas");
         }
     });
 }
