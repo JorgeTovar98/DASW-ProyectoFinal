@@ -25,12 +25,36 @@ let campaignSchema = mongoose.Schema({
         type: String,
         required:true
     },
-    creator:{
-        type: Object,
+    creatorid:{
+        type: String,
         required:true
     },
-    recount:{
+    linkcampaign:{
+        type: String,
+        required:true
+    },
+    linklogin:{
+        type: String,
+        required:true
+    },
+    ip:{
+        type: String,
+        required:true
+    },
+    linkcounter:{
         type: Number,
+        required:true
+    },
+    logincounter:{
+        type: Number,
+        required:true
+    },
+    datelink:{
+        type: String,
+        required:true
+    },
+    datelogin:{
+        type: String,
         required:true
     }
 })

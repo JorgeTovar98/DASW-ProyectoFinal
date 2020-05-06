@@ -18,3 +18,31 @@ Content-Type: application/json
       "user": "jtovar",
       "password": "1234"
 }
+
+###
+
+GET http://localhost:3003/api/campaigns/5eaf323d7592878c80e9efb2
+Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZWFmMzIzZDc1OTI4NzhjODBlOWVmYjIiLCJ1c2VyIjoianRvdmFyIiwiZW1haWwiOiJqdG92YXJAdGVzdC5jb20iLCJpYXQiOjE1ODg3MjQ2MjMsImV4cCI6MTU4ODgxMTAyM30.eq-qvljnfqK5ry1-V0tdDMlvhNT4EbIMuzDtr68tPLE"
+
+###
+
+POST http://localhost:3003/api/campaign/
+Content-Type: application/json
+Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZWFmMzIzZDc1OTI4NzhjODBlOWVmYjIiLCJ1c2VyIjoianRvdmFyIiwiZW1haWwiOiJqdG92YXJAdGVzdC5jb20iLCJpYXQiOjE1ODg3MjQ2MjMsImV4cCI6MTU4ODgxMTAyM30.eq-qvljnfqK5ry1-V0tdDMlvhNT4EbIMuzDtr68tPLE"
+
+{
+      "name": "Nethacked",
+      "city": "Monterrey",
+      "date": "2020-05-05",
+      "email": "netflix@test.com",
+      "platform": "netflix",
+      "creatorid": "5eaf323d7592878c80e9efb2"
+}
+
+###
+
+PATCH http://localhost:3003/api/linkcampaign/1588726899294
+
+###
+
+PATCH http://localhost:3003/api/linklogin/1588726899294

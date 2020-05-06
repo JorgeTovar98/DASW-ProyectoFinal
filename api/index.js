@@ -4,6 +4,7 @@ let mongoose = require('mongoose');
 let app = require('./app');
 let PORT = process.env.PORT || 3003;
 
+mongoose.set('useFindAndModify', false);
 mongoose.connect(config.DB_URL, {
         useNewUrlParser: true,
         useCreateIndex: true,

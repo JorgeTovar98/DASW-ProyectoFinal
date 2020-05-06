@@ -2,7 +2,7 @@
 
 const express = require('express');
 const UserController = require('../controllers/users');
-// const mdAuth = require('../middlewares/authenticate');
+const mdAuth = require('../middlewares/authenticate');
 
 let api = express.Router();
 
