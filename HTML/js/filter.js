@@ -17,7 +17,7 @@ function filterC(event){
                         activo.innerHTML += `<div>
                         <p id="campaingplatform" style="display:inline; font-size: 26px; color: white;">${res.results[count].platform} - ${res.results[count].email} &nbsp;&nbsp;&nbsp;</p>
                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" name=${res.results[count].id} onclick="verDetalle(this)" style="position: absolute; right: 50em;">Ver campaña</button>
-                        <button type="button" class="btn btn-secondary" style="color: white !important; position: absolute; right: 39.8em;" >Link de campaña</button>
+                        <button type="button" class="btn btn-secondary" style="color: white !important; position: absolute; right: 39.8em;" onclick=alert("${res.results[count].linkcampaign}") >Link de campaña</button>
                         <button type="button" class="btn btn-light" style="position: absolute; right: 32.3em;">Estadística</button>
                     </div>`;
                     }

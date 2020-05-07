@@ -21,17 +21,14 @@ function getCampaignsByUser(req,res){
 
 function getCampaignById(req,res){
     let id = req.params.id;
-    console.log(id);
     Campaign.findById(id,(err,campaign) => {
         if(err){
             console.log(err);
             res.status(500).send({message: 'Server error.'});
         }else{
             if(Object.entries(campaign).length === 0){
-                console.log("no obtuve");
                 res.status(404).send({message: 'Campaign not found.'});
             }else{
-                console.log("obtuve");
                 res.status(200).send({message:'Campaign obtained', result : campaign});
             }
         }

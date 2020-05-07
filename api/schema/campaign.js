@@ -10,7 +10,6 @@ let campaignSchema = mongoose.Schema({
     city:{
         type: String,
         required: true,
-        unique: true
     },
     date:{
         type: Date,

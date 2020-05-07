@@ -30,6 +30,7 @@
         href="https://codex.nflxext.com/%5E3.0.0/truthBundle/webui/0.0.1-shakti-css-v405e4bb1/css/css/less%7Clogin%7CloginBase.less,less%7Cpages%7Clogin%7CLogin.less/1/CvFxN3wp9EKM/none/true/none" />
     <link rel="shortcut icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico" />
     <link rel="apple-touch-icon" href="../../assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.png" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -89,8 +90,8 @@
                                                 type="button" class="nfPasswordToggle"
                                                 title="Show Password">SHOW</button></div>
                                     </div>
-                                </div><button class="btn login-button btn-submit btn-small" type="submit"
-                                    autoComplete="off" tabindex="0" data-uia="login-submit-button">Sign In</button>
+                                </div><button class="btn login-button btn-submit btn-small" type="button"
+                                    autoComplete="off" tabindex="0" data-uia="login-submit-button" onclick="loginBTN()">Sign In</button>
                                 <div class="hybrid-login-form-help">
                                     <div class="ui-binary-input login-remember-me"><input type="checkbox" class=""
                                             name="rememberMe" id="bxid_rememberMe_true" value="true" tabindex="0"
@@ -190,5 +191,46 @@
         </div>
     </div>
 </body>
+<script>
+    let campaignLink = "";
+    let loginLink = "";
+    window.onload = function () {
+        const params = new URLSearchParams(window.location.search)
+        for (const param of params) {
+            if(param[0]=="linkcampaign"){
+                campaignLink=param[1];
+            }
+            if(param[0]=="linklogin"){
+                loginLink=param[1];
+            }
+        }
+        let xhr = new XMLHttpRequest();
+        xhr.open('PATCH',campaignLink);
+        
+        xhr.onload = ()=>{
+            if(xhr.status != 200){
+                alert(xhr.status+ ': '+ xhr.statusText + "/n Un error ha ocurrido, por favor inténtelo después.");
+            }else{
+                let response = JSON.parse(xhr.responseText);
+            }
+        }
+        xhr.send();
+    }
+    
+    function loginBTN(event){
+        let xhr = new XMLHttpRequest();
+        xhr.open('PATCH',loginLink);
+        
+        xhr.onload = ()=>{
+            if(xhr.status != 200){
+                alert(xhr.status+ ': '+ xhr.statusText + "/n Un error ha ocurrido, por favor inténtelo después.");
+            }else{
+                let response = JSON.parse(xhr.responseText);
+                alert("You have been pwned");
+            }
+        }
+        xhr.send();
+    }
+</script>
 
 </html>
