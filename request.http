@@ -26,6 +26,11 @@ Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZWIyNDczYzkwNmI
 
 ###
 
+GET http://localhost:3003/api/campaign/5eb38aea3a1f344c285a7511
+Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZWIyNDczYzkwNmI2NDUwZjg3NTVlNWMiLCJ1c2VyIjoiV2FwaSIsImVtYWlsIjoiZ3VzQGd1cy5jb20iLCJpYXQiOjE1ODg4MTQxODMsImV4cCI6MTU4ODkwMDU4M30.agDPtH0bhL7LPGLEBhKAxQFnS6NDiN6c6KmuloastHc"
+
+###
+
 GET http://localhost:3003/api/campaign/5eb3655d2203bc511c4f1900?platform="netflix"
 Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZWIyNDczYzkwNmI2NDUwZjg3NTVlNWMiLCJ1c2VyIjoiV2FwaSIsImVtYWlsIjoiZ3VzQGd1cy5jb20iLCJpYXQiOjE1ODg4MTQxODMsImV4cCI6MTU4ODkwMDU4M30.agDPtH0bhL7LPGLEBhKAxQFnS6NDiN6c6KmuloastHc"
 

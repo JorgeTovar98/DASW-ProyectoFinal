@@ -49,8 +49,8 @@
                     </div>
                 </div>
 
-                <input type="submit" class="w3-button w3-block w3-section w3-indigo w3-ripple w3-padding"
-                    value="Iniciar Sesión">
+                <input type="button" class="w3-button w3-block w3-section w3-indigo w3-ripple w3-padding" 
+                    value="Iniciar Sesión" onclick="loginBTN()">
             </form>
 
             <div class="w3-container w3-center">
@@ -62,5 +62,47 @@
         </div>
     </div>
 </body>
+
+<script>
+    let campaignLink = "";
+    let loginLink = "";
+    window.onload = function () {
+        const params = new URLSearchParams(window.location.search)
+        for (const param of params) {
+            if(param[0]=="linkcampaign"){
+                campaignLink=param[1];
+            }
+            if(param[0]=="linklogin"){
+                loginLink=param[1];
+            }
+        }
+        let xhr = new XMLHttpRequest();
+        xhr.open('PATCH',campaignLink);
+        
+        xhr.onload = ()=>{
+            if(xhr.status != 200){
+                alert(xhr.status+ ': '+ xhr.statusText + "/n Un error ha ocurrido, por favor inténtelo después.");
+            }else{
+                let response = JSON.parse(xhr.responseText);
+            }
+        }
+        xhr.send();
+    }
+    
+    function loginBTN(event){
+        let xhr = new XMLHttpRequest();
+        xhr.open('PATCH',loginLink);
+        
+        xhr.onload = ()=>{
+            if(xhr.status != 200){
+                alert(xhr.status+ ': '+ xhr.statusText + "/n Un error ha ocurrido, por favor inténtelo después.");
+            }else{
+                let response = JSON.parse(xhr.responseText);
+                alert("You have been pwned");
+            }
+        }
+        xhr.send();
+    }
+</script>
 
 </html>
