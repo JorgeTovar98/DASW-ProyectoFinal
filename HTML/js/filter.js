@@ -8,14 +8,15 @@ function filterC(event){
         case "todos":
             $.ajax({
                 method: 'GET',
-                url: `http://127.0.0.1:3000/campaign?createdBy=jorge`,
+                url: `http://127.0.0.1:3003/api/campaigns/${currentUser._id}`,
+                headers: {"Authorization": currentToken},
                 cache: false,
-                success: function (result) {
-                    console.log(result);
-                    for (let count = 0; count < result.length; count++) {
+                success: function (res) {
+                    console.log(res);
+                    for (let count = 0; count < res.results.length; count++) {
                         activo.innerHTML += `<div>
-                        <p id="campaingplatform" style="display:inline; font-size: 26px; color: white;">${result[count].platform} - ${result[count].email} &nbsp;&nbsp;&nbsp;</p>
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" name=${result[count].id} onclick="verDetalle(this)" style="position: absolute; right: 50em;">Ver campaña</button>
+                        <p id="campaingplatform" style="display:inline; font-size: 26px; color: white;">${res.results[count].platform} - ${res.results[count].email} &nbsp;&nbsp;&nbsp;</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" name=${res.results[count].id} onclick="verDetalle(this)" style="position: absolute; right: 50em;">Ver campaña</button>
                         <button type="button" class="btn btn-secondary" style="color: white !important; position: absolute; right: 39.8em;" >Link de campaña</button>
                         <button type="button" class="btn btn-light" style="position: absolute; right: 32.3em;">Estadística</button>
                     </div>`;
@@ -30,14 +31,15 @@ function filterC(event){
         case "spotify":
             $.ajax({
                 method: 'GET',
-                url: `http://127.0.0.1:3000/campaign?createdBy=jorge&platform=spotify`,
+                url: `http://127.0.0.1:3003/api/campaigns/${currentUser._id}?platform=spotify`,
+                headers: {"Authorization": currentToken},
                 cache: false,
-                success: function (result) {
-                    console.log(result);
-                    for (let count = 0; count < result.length; count++) {
+                success: function (res) {
+                    let results = res.results.filter((x)=>x.platform=="spotify");
+                    for (let count = 0; count < results.length; count++) {
                         activo.innerHTML += `<div>
-                        <p id="campaingplatform" style="display:inline; font-size: 26px; color: white;">${result[count].platform} - ${result[count].email} &nbsp;&nbsp;&nbsp;</p>
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" name=${result[count].id} onclick="verDetalle(this)" style="position: absolute; right: 50em;">Ver campaña</button>
+                        <p id="campaingplatform" style="display:inline; font-size: 26px; color: white;">${results[count].platform} - ${results[count].email} &nbsp;&nbsp;&nbsp;</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" name=${results[count]._id} onclick="verDetalle(this)" style="position: absolute; right: 50em;">Ver campaña</button>
                         <button type="button" class="btn btn-secondary" style="color: white !important; position: absolute; right: 39.8em;" >Link de campaña</button>
                         <button type="button" class="btn btn-light" style="position: absolute; right: 32.3em;">Estadística</button>
                     </div>`;
@@ -52,14 +54,15 @@ function filterC(event){
         case "netflix":
             $.ajax({
                 method: 'GET',
-                url: `http://127.0.0.1:3000/campaign?createdBy=jorge&platform=netflix`,
+                url: `http://127.0.0.1:3003/api/campaigns/${currentUser._id}?platform=netflix`,
+                headers: {"Authorization": currentToken},
                 cache: false,
-                success: function (result) {
-                    console.log(result);
-                    for (let count = 0; count < result.length; count++) {
+                success: function (res) {
+                    let results = res.results.filter((x)=>x.platform=="netflix");
+                    for (let count = 0; count < results.length; count++) {
                         activo.innerHTML += `<div>
-                        <p id="campaingplatform" style="display:inline; font-size: 26px; color: white;">${result[count].platform} - ${result[count].email} &nbsp;&nbsp;&nbsp;</p>
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" name=${result[count].id} onclick="verDetalle(this)" style="position: absolute; right: 50em;">Ver campaña</button>
+                        <p id="campaingplatform" style="display:inline; font-size: 26px; color: white;">${results[count].platform} - ${results[count].email} &nbsp;&nbsp;&nbsp;</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" name=${results[count]._id} onclick="verDetalle(this)" style="position: absolute; right: 50em;">Ver campaña</button>
                         <button type="button" class="btn btn-secondary" style="color: white !important; position: absolute; right: 39.8em;" >Link de campaña</button>
                         <button type="button" class="btn btn-light" style="position: absolute; right: 32.3em;">Estadística</button>
                     </div>`;
@@ -74,14 +77,15 @@ function filterC(event){
         case "paypal":
             $.ajax({
                 method: 'GET',
-                url: `http://127.0.0.1:3000/campaign?createdBy=jorge&platform=paypal`,
+                url: `http://127.0.0.1:3003/api/campaigns/${currentUser._id}?platform=paypal`,
+                headers: {"Authorization": currentToken},
                 cache: false,
-                success: function (result) {
-                    console.log(result);
-                    for (let count = 0; count < result.length; count++) {
+                success: function (res) {
+                    let results = res.results.filter((x)=>x.platform=="spotify");
+                    for (let count = 0; count < results.length; count++) {
                         activo.innerHTML += `<div>
-                        <p id="campaingplatform" style="display:inline; font-size: 26px; color: white;">${result[count].platform} - ${result[count].email} &nbsp;&nbsp;&nbsp;</p>
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" name=${result[count].id} onclick="verDetalle(this)" style="position: absolute; right: 50em;">Ver campaña</button>
+                        <p id="campaingplatform" style="display:inline; font-size: 26px; color: white;">${results[count].platform} - ${results[count].email} &nbsp;&nbsp;&nbsp;</p>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" name=${results[count]._id} onclick="verDetalle(this)" style="position: absolute; right: 50em;">Ver campaña</button>
                         <button type="button" class="btn btn-secondary" style="color: white !important; position: absolute; right: 39.8em;" >Link de campaña</button>
                         <button type="button" class="btn btn-light" style="position: absolute; right: 32.3em;">Estadística</button>
                     </div>`;

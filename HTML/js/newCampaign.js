@@ -1,4 +1,8 @@
 let globalplatform = "";
+let currentUser = JSON.parse(sessionStorage.getItem("user"));
+let currentToken = sessionStorage.getItem("token");
+const SERVER_URL = "http://127.0.0.1:3003";
+
 function preview(event){
     let nombreVictima = document.getElementById("nameCamp").value;
     let emailVictima = document.getElementById("emailCamp").value;
@@ -35,6 +39,16 @@ function saveValues(){
     let ciudadVictima = document.getElementById("cityCamp").value;
     let fechaVictima = document.getElementById("dateCamp").value;
 
+    let platformRadio = document.getElementsByName("platform");
+    let platform = "";
+
+    for(let count=0;count<platformRadio.length;count++){
+        if(platformRadio[count].checked){
+            platform=platformRadio[count].value; break;
+        }
+    }
+    globalplatform = platform;
+
     let timestamp = new Date().getTime();
     let peticion = {
         name: nombreVictima,
@@ -42,18 +56,18 @@ function saveValues(){
         date: fechaVictima,
         email: emailVictima,
         platform: globalplatform,
-        id: timestamp,
-        createdBy: "jorge"
+        creatorid: currentUser._id,
+        linkcampaign: `${SERVER_URL}/api/linkcampaign/${timestamp}`,
+        linklogin: `${SERVER_URL}/api/linklogin/${timestamp}`
     };
     $.ajax({
         method: 'POST',
-        url: "http://127.0.0.1:3000/campaign",
+        url: "http://127.0.0.1:3003/api/campaign",
         data: peticion,
         dataType: "json",
+        headers: {"Authorization": currentToken},
         success: function (token) {
-            // Do something
             alert("La campaña ha sido dada de alta exitosamente");
-            document.cookie = `token=${token};`; 
         },
         error: function (error) {
             console.log("ERROR:" + JSON.stringify(error));

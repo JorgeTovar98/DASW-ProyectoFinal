@@ -6,7 +6,6 @@ let config = require('../config/config');
 
 function getCampaignsByUser(req,res){
     let id = req.params.creatorid;
-    console.log(req.params);
     Campaign.find({creatorid:{$eq:id}}).lean(true).exec((err,campaign)=>{
         if(err){
             res.status(500).send({message: 'Server error.'});
@@ -20,6 +19,26 @@ function getCampaignsByUser(req,res){
     });
 }
 
+function getCampaignById(req,res){
+    let id = req.params.id;
+    console.log(id);
+    Campaign.findById(id,(err,campaign) => {
+        if(err){
+            console.log(err);
+            res.status(500).send({message: 'Server error.'});
+        }else{
+            if(Object.entries(campaign).length === 0){
+                console.log("no obtuve");
+                res.status(404).send({message: 'Campaign not found.'});
+            }else{
+                console.log("obtuve");
+                res.status(200).send({message:'Campaign obtained', result : campaign});
+            }
+        }
+    });
+}
+
+
 function createCampaign(req,res){
     let campaign = new Campaign();
     let params = req.body;
@@ -29,8 +48,8 @@ function createCampaign(req,res){
     campaign.email = params.email;
     campaign.platform = params.platform;
     campaign.creatorid = params.creatorid;
-    campaign.linkcampaign = `${config.SERVER_URL}/api/linkcampaign/${moment().valueOf()}`;
-    campaign.linklogin = `${config.SERVER_URL}/api/linklogin/${moment().valueOf()}`;
+    campaign.linkcampaign = params.linkcampaign;
+    campaign.linklogin = params.linklogin;
     campaign.ip = " ";
     campaign.linkcounter = 0;
     campaign.logincounter = 0;
@@ -53,5 +72,6 @@ function createCampaign(req,res){
 
 module.exports = {
     getCampaignsByUser,
-    createCampaign
+    createCampaign,
+    getCampaignById
 };

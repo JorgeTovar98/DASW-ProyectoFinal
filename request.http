@@ -22,7 +22,14 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3003/api/campaigns/5eaf323d7592878c80e9efb2
-Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZWFmMzIzZDc1OTI4NzhjODBlOWVmYjIiLCJ1c2VyIjoianRvdmFyIiwiZW1haWwiOiJqdG92YXJAdGVzdC5jb20iLCJpYXQiOjE1ODg3MjQ2MjMsImV4cCI6MTU4ODgxMTAyM30.eq-qvljnfqK5ry1-V0tdDMlvhNT4EbIMuzDtr68tPLE"
+Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZWIyNDczYzkwNmI2NDUwZjg3NTVlNWMiLCJ1c2VyIjoiV2FwaSIsImVtYWlsIjoiZ3VzQGd1cy5jb20iLCJpYXQiOjE1ODg4MTQxODMsImV4cCI6MTU4ODkwMDU4M30.agDPtH0bhL7LPGLEBhKAxQFnS6NDiN6c6KmuloastHc"
+
+###
+
+GET http://localhost:3003/api/campaign/5eb3655d2203bc511c4f1900?platform="netflix"
+Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZWIyNDczYzkwNmI2NDUwZjg3NTVlNWMiLCJ1c2VyIjoiV2FwaSIsImVtYWlsIjoiZ3VzQGd1cy5jb20iLCJpYXQiOjE1ODg4MTQxODMsImV4cCI6MTU4ODkwMDU4M30.agDPtH0bhL7LPGLEBhKAxQFnS6NDiN6c6KmuloastHc"
+
+
 
 ###
 

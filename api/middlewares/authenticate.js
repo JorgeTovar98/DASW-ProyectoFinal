@@ -6,6 +6,7 @@ const secret = 'clave_secreta';
 
 exports.ensureAuth = function(req, res, next){
     if(!req.headers.authorization){
+        console.log("No hay auth");
         return res.status(403).send({message:'Request doesn´t have an authentication header.'});
     }
     let token = req.headers.authorization.replace(/['"]+/g,'');
