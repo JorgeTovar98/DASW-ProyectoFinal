@@ -83,7 +83,8 @@ function verEstadisticas(event){
             <p><span style="font-size: 2em; color:rebeccapurple;"> IP de la víctima:</span><span  style="font-size: 2em; color: midnightblue;">&nbsp;${res.result.ip}</span></p>
             <p><span style="font-size: 2em; color:rebeccapurple;"> ¿Ingresó al link?</span><span  style="font-size: 2em; color: midnightblue;">&nbsp;${statusLink}</span></p>
             <p><span style="font-size: 2em; color:rebeccapurple;"> Fecha de acceso:</span><span  style="font-size: 2em; color: midnightblue;">&nbsp;${res.result.datelink}</span></p>
-            <p><span style="font-size: 2em; color:rebeccapurple;"> ¿Hizo login?</span><span  style="font-size: 2em; color: midnightblue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${statusLogin}</span></p>`
+            <p><span style="font-size: 2em; color:rebeccapurple;"> ¿Hizo login?</span><span  style="font-size: 2em; color: midnightblue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${statusLogin}</span></p>
+            <p><span style="font-size: 2em; color:rebeccapurple;"> Fecha de login</span><span  style="font-size: 2em; color: midnightblue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${res.result.datelogin}</span></p>`
             modaltext.innerHTML = html;
         },
         error: function (error) {

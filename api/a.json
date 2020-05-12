@@ -1,0 +1,11 @@
+{
+    "_id": {
+        "$oid": "5eaf323d7592878c80e9efb2"
+    },
+    "fullName": "Jorge Tovar",
+    "user": "jtovar",
+    "password": "1234",
+    "email": "jtovar@test.com",
+    "phone": "33110000",
+    "__v": 0
+}
