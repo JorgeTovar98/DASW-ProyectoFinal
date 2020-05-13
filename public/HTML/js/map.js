@@ -6,10 +6,11 @@ function map() {
     activo.innerHTML = "";
     $.ajax({
         method: 'GET',
-        url: `http://127.0.0.1:3003/api/campaigns/${currentUser._id}`,
+        url: `/api/campaigns/${currentUser._id}`,
         headers: {"Authorization": currentToken},
         cache: false,
         success: function (res) {
+            console.log(res);
             for (let count = 0; count < res.results.length; count++) {
                 activo.innerHTML += `<div>
                 <p id="campaingplatform" style="display:inline; font-size: 26px; color: white;">${res.results[count].platform} - ${res.results[count].email} &nbsp;&nbsp;&nbsp;</p>
@@ -31,7 +32,7 @@ function verDetalle(event) {
     let html = "";
     $.ajax({
         method: 'GET',
-        url: `http://127.0.0.1:3003/api/campaign/${event.name}`,
+        url: `/api/campaign/${event.name}`,
         headers: {"Authorization": currentToken},
         cache: false,
         success: function (res) {
@@ -63,10 +64,11 @@ function verEstadisticas(event){
     let html = "";
     $.ajax({
         method: 'GET',
-        url: `http://127.0.0.1:3003/api/campaign/${event.name}`,
+        url: `/api/campaign/${event.name}`,
         headers: {"Authorization": currentToken},
         cache: false,
         success: function (res) {
+            console.log(res);
             if(res.result.linkcounter == 1){
                 statusLink="Sí"
             }else{

@@ -8,7 +8,7 @@ function filterC(event){
         case "todos":
             $.ajax({
                 method: 'GET',
-                url: `http://127.0.0.1:3003/api/campaigns/${currentUser._id}`,
+                url: `/api/campaigns/${currentUser._id}`,
                 headers: {"Authorization": currentToken},
                 cache: false,
                 success: function (res) {

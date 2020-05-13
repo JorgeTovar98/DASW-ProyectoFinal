@@ -1,7 +1,6 @@
 let globalplatform = "";
 let currentUser = JSON.parse(sessionStorage.getItem("user"));
 let currentToken = sessionStorage.getItem("token");
-const SERVER_URL = "http://127.0.0.1:3003";
 
 function preview(event){
     let nombreVictima = document.getElementById("nameCamp").value;
@@ -57,12 +56,12 @@ function saveValues(){
         email: emailVictima,
         platform: globalplatform,
         creatorid: currentUser._id,
-        linkcampaign: `${SERVER_URL}/api/linkcampaign/${timestamp}`,
-        linklogin: `${SERVER_URL}/api/linklogin/${timestamp}`
+        linkcampaign: `/api/linkcampaign/${timestamp}`,
+        linklogin: `/api/linklogin/${timestamp}`
     };
     $.ajax({
         method: 'POST',
-        url: "http://127.0.0.1:3003/api/campaign",
+        url: "/api/campaign",
         data: peticion,
         dataType: "json",
         headers: {"Authorization": currentToken},

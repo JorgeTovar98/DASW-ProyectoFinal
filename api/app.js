@@ -16,8 +16,8 @@ let linkRoutes = require('./routes/links');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
-// app.use(express.static(__dirname + "/../public"))
-// app.use(express.static(__dirname + "/../public/views"))
+app.use(express.static(__dirname + "/../public"))
+
 
 // //Rutas Base
 app.use('/api',userRoutes);

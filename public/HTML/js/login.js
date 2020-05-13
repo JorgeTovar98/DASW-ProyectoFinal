@@ -7,7 +7,7 @@ function login() {
     }
     $.ajax({
         method: 'POST',
-        url: `http://127.0.0.1:3003/api/login`,
+        url: `/api/login`,
         data: peticion,
         dataType: "json",
         success: function (resolve) {

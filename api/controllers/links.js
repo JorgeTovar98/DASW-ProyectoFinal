@@ -6,7 +6,7 @@ let config = require('../config/config');
 
 function phishingLink(req,res){
     let unique = req.params.unique;
-    let url = `${config.SERVER_URL}/api/linkcampaign/${unique}`;
+    let url = `/api/linkcampaign/${unique}`;
     let update = {
         datelink: moment().format(),
         linkcounter: 1,
@@ -24,7 +24,7 @@ function phishingLink(req,res){
 
 function loginLink(req,res){
     let unique = req.params.unique;
-    let url = `${config.SERVER_URL}/api/linklogin/${unique}`;
+    let url = `/api/linklogin/${unique}`;
 
     let update = {
         datelogin: moment().format(),

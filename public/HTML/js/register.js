@@ -13,7 +13,7 @@ function register() {
     };
     $.ajax({
         method: 'POST',
-        url: "http://127.0.0.1:3003/api/user",
+        url: "/api/user",
         data: peticion,
         dataType: "json",
         success: function (resolve) {
