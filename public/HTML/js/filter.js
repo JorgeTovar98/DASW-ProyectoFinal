@@ -31,7 +31,7 @@ function filterC(event){
         case "spotify":
             $.ajax({
                 method: 'GET',
-                url: `http://127.0.0.1:3003/api/campaigns/${currentUser._id}?platform=spotify`,
+                url: `/api/campaigns/${currentUser._id}?platform=spotify`,
                 headers: {"Authorization": currentToken},
                 cache: false,
                 success: function (res) {
@@ -54,7 +54,7 @@ function filterC(event){
         case "netflix":
             $.ajax({
                 method: 'GET',
-                url: `http://127.0.0.1:3003/api/campaigns/${currentUser._id}?platform=netflix`,
+                url: `/api/campaigns/${currentUser._id}?platform=netflix`,
                 headers: {"Authorization": currentToken},
                 cache: false,
                 success: function (res) {
@@ -77,7 +77,7 @@ function filterC(event){
         case "paypal":
             $.ajax({
                 method: 'GET',
-                url: `http://127.0.0.1:3003/api/campaigns/${currentUser._id}?platform=paypal`,
+                url: `/api/campaigns/${currentUser._id}?platform=paypal`,
                 headers: {"Authorization": currentToken},
                 cache: false,
                 success: function (res) {
