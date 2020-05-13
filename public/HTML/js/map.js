@@ -16,7 +16,8 @@ function map() {
                 <p id="campaingplatform" style="display:inline; font-size: 26px; color: white;">${res.results[count].platform} - ${res.results[count].email} &nbsp;&nbsp;&nbsp;</p>
 				<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" name=${res.results[count]._id} onclick="verDetalle(this)" style="position: absolute; right: 50em;">Ver campaña</button>
 				<button type="button" class="btn btn-secondary" style="color: white !important; position: absolute; right: 39.8em;" onclick=alert("${res.results[count].linkcampaign}") >Link de campaña</button>
-                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#statisticsModal" name=${res.results[count]._id} style="position: absolute; right: 32.3em;" onclick="verEstadisticas(this)">Estadística</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#statisticsModal" name=${res.results[count]._id} style="position: absolute; right: 32.3em;" onclick="verEstadisticas(this)">Estadística</button>
+                <button type="button" class="btn btn-light" name=${res.results[count]._id} style="position: absolute; right: 28.5em;" onclick="deleteCampaign(this)"><i class="fa fa-trash"></i></button>
 			</div>`;
             }
         },
@@ -88,6 +89,22 @@ function verEstadisticas(event){
             <p><span style="font-size: 2em; color:rebeccapurple;"> ¿Hizo login?</span><span  style="font-size: 2em; color: midnightblue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${statusLogin}</span></p>
             <p><span style="font-size: 2em; color:rebeccapurple;"> Fecha de login</span><span  style="font-size: 2em; color: midnightblue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${res.result.datelogin}</span></p>`
             modaltext.innerHTML = html;
+        },
+        error: function (error) {
+            console.log("ERROR:" + JSON.stringify(error));
+        }
+    });
+}
+
+function deleteCampaign(event){
+    $.ajax({
+        method: 'DELETE',
+        url: `/api/campaign/${event.name}`,
+        headers: {"Authorization": currentToken},
+        cache: false,
+        success: function (res) {
+            alert("Campaña eliminada con éxito");
+            map();
         },
         error: function (error) {
             console.log("ERROR:" + JSON.stringify(error));

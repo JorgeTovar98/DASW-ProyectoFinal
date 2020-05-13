@@ -35,6 +35,22 @@ function getCampaignById(req,res){
     });
 }
 
+function deleteCampaignById(req,res){
+    let id = req.params.id;
+    Campaign.deleteOne({_id:Object(`${id}`)},(err,campaign) => {
+        if(err){
+            console.log(err);
+            res.status(500).send({message: 'Server error.'});
+        }else{
+            if(Object.entries(campaign).length === 0){
+                res.status(404).send({message: 'Campaign not found.'});
+            }else{
+                res.status(200).send({message:'Campaign deleted'});
+            }
+        }
+    });
+}
+
 
 function createCampaign(req,res){
     let campaign = new Campaign();
@@ -70,5 +86,6 @@ function createCampaign(req,res){
 module.exports = {
     getCampaignsByUser,
     createCampaign,
-    getCampaignById
+    getCampaignById,
+    deleteCampaignById
 };

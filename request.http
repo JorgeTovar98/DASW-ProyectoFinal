@@ -53,6 +53,12 @@ Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZWFmMzIzZDc1OTI
 
 ###
 
+DELETE http://localhost:3003/api/campaign/5ebb4f9ba9e2300017032f37
+Content-Type: application/json
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1ZWJiMzcxMGZmNjViOTdhMWMyYTNmODQiLCJ1c2VyIjoiZmluYWwiLCJlbWFpbCI6ImZpbmFsQHcuY29tIiwiaWF0IjoxNTg5NDA0MDAxLCJleHAiOjE1ODk0OTA0MDF9.eCyGnQiAqbdhKCobG7zR4Zy57aCPZBaT9LVH7MYtjCo
+
+###
+
 PATCH http://127.0.0.1:3003/api/linkcampaign/1588815197862
 
 ###
